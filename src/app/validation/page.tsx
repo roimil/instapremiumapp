@@ -38,7 +38,7 @@ export default function ValidationPage() {
   };
   
   const handleCheckout = () => {
-    window.open('https://checkout.perfectpay.com.br/pay/PPU38COBJ1R', '_blank');
+    window.open('https://go.disruptybr.com.br/fobvs0fo3z', '_blank');
     
     // Opcional: redirecionar para página de checkout após um tempo
     setTimeout(() => {
