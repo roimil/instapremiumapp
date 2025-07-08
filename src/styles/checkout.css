@@ -1,0 +1,147 @@
+/* Estilos para a página de Checkout */
+.checkout-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.checkout-container h1 {
+  background: linear-gradient(to right, #8E2DE2, #FF512F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.checkout-intro {
+  color: #ccc;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.checkout-summary {
+  background: #111;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.summary-header {
+  background: linear-gradient(to right, #8E2DE2, #FF512F);
+  color: white;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.summary-content {
+  padding: 15px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+  color: #ccc;
+}
+
+.summary-row.total {
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #00e676;
+}
+
+.summary-row .amount {
+  font-weight: 600;
+}
+
+.checkout-info {
+  display: flex;
+  background: #222;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.info-icon {
+  background: linear-gradient(to right, #8E2DE2, #FF512F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.info-text p {
+  color: #ccc;
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.checkout-note {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.btn-return {
+  background: linear-gradient(to right, #8E2DE2, #FF512F);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px 0;
+}
+
+.btn-return:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(142, 45, 226, 0.4);
+}
+
+.checkout-footer {
+  margin-top: 40px;
+  color: #888;
+}
+
+.checkout-footer p {
+  margin: 5px 0;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.copyright {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+  .checkout-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .checkout-intro {
+    font-size: 1.1rem;
+  }
+  
+  .summary-header {
+    font-size: 1.1rem;
+  }
+  
+  .info-icon {
+    font-size: 1.3rem;
+  }
+}

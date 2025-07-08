@@ -1,0 +1,528 @@
+/* csslint ignore:start */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* csslint ignore:end */
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --primary-color: #8E2DE2;
+  --primary-color-light: #FF512F;
+  --accent-color: #00e676;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --background-dark: #111111;
+  --background-darker: #000000;
+  --card-bg: #222222;
+  --border-color: #333333;
+  --gradient-primary: linear-gradient(to right, #8E2DE2, #FF512F);
+}
+
+body {
+  color: var(--text-light);
+  font-family: 'Roboto', sans-serif;
+  background-color: #111;
+  min-height: 100vh;
+}
+
+/* Estilo base do InstaPremium - Importando os estilos originais */
+/* Header Styles */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: black;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dollar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #8E2DE2, #FF512F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-text-fill-color: white;
+  box-shadow: 0 2px 8px rgba(142, 45, 226, 0.5);
+  z-index: 10;
+  margin-left: 10px;
+}
+
+.dollar-icon span {
+  color: white;
+  -webkit-text-fill-color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Estilos para botões lado a lado ocupando todo o espaço */
+.answer-buttons {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.btn-yes, .btn-no {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-yes {
+  background-color: #27ae60;
+}
+
+.btn-no {
+  background-color: #e74c3c;
+}
+
+.btn-yes:hover {
+  background-color: #219955;
+}
+
+.btn-no:hover {
+  background-color: #d44333;
+}
+
+.btn-yes i, .btn-no i {
+  margin-right: 8px;
+}
+
+.start-button {
+  background: linear-gradient(to right, #C13584, #F56040);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(193, 53, 132, 0.5);
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(193, 53, 132, 0.7);
+}
+
+.balance {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 500;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modal Styles */
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: var(--background-dark);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-light);
+}
+
+.modal h1 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.modal p {
+  margin-bottom: 15px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.modal .highlight {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.btn-start {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  width: 80%;
+}
+
+.btn-start:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.btn-start.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-start.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Influencer Header Styles */
+.influencer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 2px solid #eee;
+}
+
+.profile-details h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.verified {
+  color: #3897f0;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.profile-details p {
+  margin: 3px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.price-tag {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Influencer Image Styles */
+.influencer-image {
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.influencer-image img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.like-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.like-overlay i {
+  font-size: 5rem;
+  color: white;
+}
+
+.like-overlay.liked {
+  opacity: 1;
+}
+
+/* Question Container Styles */
+.question-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-container h1 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.answer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-yes, .btn-no {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-yes {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-no {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-yes:hover, .btn-no:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yes i, .btn-no i {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+/* Preloader Styles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.preloader.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #333;
+  border-top: 5px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.preloader-text {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+/* Reward Modal Styles */
+.reward-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.reward-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--background-dark);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  max-width: 90%;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  color: var(--text-light);
+}
+
+.reward-modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #009624, var(--accent-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.checkmark i {
+  color: white;
+  font-size: 40px;
+}
+
+.modal-title-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.reward-text {
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.reward-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #009624, var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+  color: var(--accent-color);
+}
+
+.reward-details {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .modal {
+    width: 90%;
+  }
+  
+  .btn-yes, .btn-no {
+    padding: 12px 20px;
+  }
+  
+  .question-container h1 {
+    font-size: 1.2rem;
+  }
+}
